@@ -1,0 +1,31 @@
+title: Median berechnen
+question: |
+  Berechnen Sie den Median in den folgenden Fällen: 
+  
+  a) $(8,12,5,17)$   
+
+  b) $(5,3,7,3,4,4)$  
+
+  c) $(5,3,7,3,4,42)$  
+
+  d) $(12,-17,-13,10,8)$  
+
+  e) $(-17,8,12,-13,10)$
+  
+  f) $(3, -3)$
+  
+  g) $(7)$
+solution: |
+  a) $\frac{5+12}{2}=\frac{17}{2}=8,5$,
+
+  b) $\frac{4+4}{2}=\frac{8}{2}=4$
+  
+  c) $\frac{4+5}{2}=\frac{9}{2}=4,5$
+
+  d) $8$
+  
+  e) $8$
+  
+  f) $\frac{3+(-3)}{2}=\frac{0}{2}=0$
+  
+  g) $7$

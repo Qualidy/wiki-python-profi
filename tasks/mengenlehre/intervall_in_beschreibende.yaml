@@ -1,0 +1,15 @@
+title: Intervalle in beschreibende Schreibweise umschreiben
+question: |
+  Forme die Intervall-Schreibweisen in die Beschreibende Schreibweise um.
+
+  a) $A=(-3,7]$
+
+  b) $B = (-∞, ∞)$
+
+  c) $C = (5,6)$
+solution: |
+  a) $\{x∈\mathbb{R} : -3 < x ≤ 7\}$
+
+  b) $\{x∈\mathbb{R}\}$
+
+  c) $\{x∈\mathbb{R}:5 < x < 6\}$

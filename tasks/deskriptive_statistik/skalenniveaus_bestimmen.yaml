@@ -1,0 +1,23 @@
+title: Skalenniveaus bestimmen
+question: |
+  Ein Unternehmen hat eine Umfrage zu verschiedenen Eigenschaften von Produkten durchgeführt. Bestimme für jedes der folgenden Merkmale das richtige Skalenniveau.  
+  
+  a) Seriennummer der Produkte  
+  
+  b) Rangliste der beliebtesten Produkte  
+  
+  c) Zeit in Minuten, die ein Kunde auf die Lieferung wartet  
+  
+  d) Anzahl der verkauften Produkte in einem Jahr  
+  
+  e) Produktkategorie (z.B. Elektronik, Kleidung, Lebensmittel)
+solution: |
+  a) Ordinal
+  
+  b) Ordinal
+  
+  c) Intervall
+  
+  d) Intervall
+  
+  e) Nominal

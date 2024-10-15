@@ -1,0 +1,28 @@
+title: "Lineare Funktionen: Funktionsgleichung aufstellen und zeichnen"
+question: |
+  Gegeben seien die folgenden Eigenschaften einer linearen Funktion. 
+  Bestimme die Funktionsgleichung und zeichne den Graphen in ein Koordinatensystem. 
+
+  a) $m=1$ und $P(-2,2)$
+
+  b) $m=\frac{1}{3}$ und $P(0,4)$
+
+  c) $P(1,2)$ und $Q(4,2)$
+
+  d) $P(-4,2)$ und $Q(-6,3)$
+
+  e) $m=\frac{1}{2}$	und	$P(-2,0)$
+
+  f) $m=3$	und	$P(-3,1)$
+solution: |
+  a) $y = x + 4$
+
+  b) $y = \frac{1}{3}x + 4$
+
+  c) $y = 2$
+
+  d) $y = -\frac{1}{2}x$
+
+  e) $y = \frac{1}{2}x + 1$
+
+  f) $y = 3x + 10$

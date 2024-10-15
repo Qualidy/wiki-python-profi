@@ -1,0 +1,12 @@
+title: "Lineare Funktionen: Das Taxiunternehmen"
+question: |
+  Das Taxiunternehmen Wolf nimmt für eine 1 km lange Fahrtstrecke 50 Cent. 
+  Dem Fahrgast wird jedoch bereits zu Beginn der Fahrt eine Gebühr von 2,50 € berechnet. 
+
+  a) Stelle dafür eine Funktionsgleichung auf 
+  
+  b) Berechne, wieviel der Fahrgast für 15 km Fahrtstrecke zahlen müsste.
+solution: |
+  a) $f(x) = 0,5x + 2,5$
+
+  b) Für eine Fahrtstrecke von 15 km müsste der Fahrgast **25 €** zahlen.

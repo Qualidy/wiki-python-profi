@@ -1,0 +1,99 @@
+site_name: Python Fortgeschritten
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - macros
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/style.css
+  - stylesheets/video_admonition.css
+
+theme:
+  name: material
+  logo: logo.png
+  palette:
+    primary: 'amber'
+    accent: 'light blue'
+  features:
+    - navigation.indexes
+    - navigation.footer
+
+extra:
+  social:
+    - icon: fontawesome/solid/k
+      link: https://www.kununu.com/de/qualidy
+    - icon: fontawesome/brands/linkedin
+      link: https://de.linkedin.com/company/qualidy
+    - icon: material/google
+      link: https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF
+    - icon: fontawesome/solid/globe
+      link: https://qualidy.de
+
+nav:
+  - index.md
+  - Dash:
+    - python_dash/index.md
+    - Erste Schritte: python_dash/erste_schritte.md
+    - Layout: python_dash/layout.md
+    - Styles: python_dash/styles.md
+    - Callbacks: python_dash/callbacks.md
+    - Multipage Apps: python_dash/multipage_apps.md
+    - Dash dcc.Store: python_dash/dcc_store.md
+  - Polars: 
+    - python_polars/index.md
+    - Erste Schritte: python_polars/erste_schritte.md
+    - Lazy vs. Eager: python_polars/lazy_vs_eager.md
+  - Pydantic:
+    - pydantic/index.md
+    - Fields: pydantic/fields.md
+    - Eigene Felder: pydantic/eigene_felder.md
+    - Schemata: pydantic/schema.md
+    - Dataclasses: pydantic/dataclasses.md
+  - Pytest:
+    - pytest/index.md
+    - Fixtures: pytest/fixtures.md
+    - Parametrisierte Tests: pytest/parametrisierte_tests.md
+    - Best Practices: pytest/best_practices.md
+  - Effizienter Code & Arbeitsspeicherressourcen:
+    - effizienter_code_und_arbeitsspeicherressourcen/index.md
+    - Arbeitsspeicher: effizienter_code_und_arbeitsspeicherressourcen/arbeitsspeicher.md
+    - Effizienter Code in Python: effizienter_code_und_arbeitsspeicherressourcen/effizienter_code_in_python.md
+    - Effizienter Code im Umgang mit Daten: effizienter_code_und_arbeitsspeicherressourcen/effizienter_code_im_umgang_mit_daten.md
+  - Dekoratoren und Klassen:
+    - dekoratoren_und_klassen/index.md
+    - Dekoratoren: dekoratoren_und_klassen/dekoratoren.md
+    - Klassen: dekoratoren_und_klassen/erweiterte_klassen.md
+  - Git:
+    - git/index.md
+    - .gitignore: git/gitignore.md
+    - Best Practices: git/best_practices.md
+  - OOP, Design Patterns & Projektstrukturen: 
+    - oop_design_patterns_projektstrukturen/index.md
+    - Prinzipien OOP: oop_design_patterns_projektstrukturen/prinzipien_oop.md
+    - Abstrakte Klassen und Schnittstellen: oop_design_patterns_projektstrukturen/abstrakte_klassen_und_schnittstellen.md
+    - Design Patterns: oop_design_patterns_projektstrukturen/design_patterns.md
+    - Projektstrukturen: oop_design_patterns_projektstrukturen/projektstrukturen.md
+    - Solid: oop_design_patterns_projektstrukturen/solid.md
+    - Best Practices: oop_design_patterns_projektstrukturen/best_practices.md

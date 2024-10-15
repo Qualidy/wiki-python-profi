@@ -1,0 +1,15 @@
+title: Lineare Funktionsgleichung aufstellen
+question: |
+  Josef kauft sich für **20.000€** einen neuen Benziner. Er weiß aus Erfahrung, dass er **0,23 €/km** für Tanken und Verschleiß ausgibt.
+
+  a) Gib eine Formel an, die nach dem Autokauf die Gesamtkosten in Abhängigkeit der Strecke angibt.
+
+  b) Wie weit kommt er mit einem Budget von 25.000€?
+
+  c) Wie viel Geld wird Josef bis zum Kilometerstand von 100.000 km ausgegeben haben?
+solution: |
+  a) $f(x) = 0,23x$
+
+  b) $x = 108.696 km$
+
+  c) Bis zum Kilometerstand von 100.000 km wird Josef **23.000 €** ausgegeben haben.

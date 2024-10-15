@@ -1,0 +1,29 @@
+title: Schreibweisen umschreiben
+question: |
+  Gegeben ist jeweils entweder die aufzählende oder die beschreibende Schreibweise. 
+  Forme die gegebene Menge in die jeweils andere Schreibweise um
+
+  a) $A = \{1, 2, 3, 4, 5, 6\}$ 
+
+  b) $B = \{x ∈ \mathbb{N} | x ≤ 1\}$
+
+  c) $C = {-3,-2,-1,0,1,2,3}$
+
+  d) $D = \{x ∈ \mathbb{Z}│-5 ≤ x ≤ 5\}$
+
+  e) $E = \{0,1,2,3,6,7,8,9\}$
+
+  f) $F = \{x ∈ \mathbb{N}│x < 9 ∧ x > 3\}$
+
+solution: |
+  a) A = $\{x \in \mathbb{N} q| 1 \leq x \leq 6\}$
+
+  b) B = $\{0, 1\}$
+
+  c) C = $\{x \in \mathbb{Z} | -3 \leq x \leq 3\}$
+
+  d) D = $\{-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5\}$
+
+  e) E = $\{x \in \mathbb{N} | 0 \leq x \leq 9\} \text{ bzw. } \{x \in \mathbb{N} | 0 \leq x < 10\}$ 
+
+  f) F = $\{4, 5, 6, 7, 8\}$

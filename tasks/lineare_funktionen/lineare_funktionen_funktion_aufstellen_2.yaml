@@ -1,0 +1,20 @@
+title: Lineare Funktionsgleichung aufstellen
+question: |
+  Manfred kauft sich für **25.000€** einen neuen Diesel. Er weiß aus Erfahrung, dass er **0,19 €/km** für Tanken und Verschleiß ausgibt.
+
+  a) Gib eine Formel an, die nach dem Autokauf die Gesamtkosten in Abhängigkeit der Strecke angibt.
+
+  b) Wie weit kommt er mit einem Budget von 25.000€?
+
+  c) Wie viel Geld wird Manfred bis zum Kilometerstand von 100.000km ausgegeben haben?
+
+  d) Nach wie vielen Kilometern rentiert sich der Diesel für Manfred verglichen mit dem Benziner von Josef?
+
+solution: |
+  a) $f(x) = 0,19x$
+
+  b) $x = 131.579 km$
+
+  c) Bis zum Kilometerstand von 100.000 km wird Manfred **19.000 €** ausgegeben haben.
+
+  d) Der Diesel von Manfred rentiert sich im Vergleich zu Josefs Benziner nach **48.750 km**.

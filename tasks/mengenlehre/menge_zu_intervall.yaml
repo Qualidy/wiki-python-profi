@@ -1,0 +1,19 @@
+title: Mengen zu Intervallen
+question: |
+  Bestimme die Lösungsmenge als Intervall.
+
+  a) $\{x∈\mathbb{R} :x ≤ 12\}$
+
+  b) $\{x∈\mathbb{R}:x≤12 \text{ und } x > -4\}$
+
+  c) $\{x∈\mathbb{R}:\frac{x}{3} ≤ 12\}$
+
+  d) $\{x∈\mathbb{R}:x ≤ 12 \text{ und } x > 25\}$
+solution: |
+  a) $(-\infty , 12]$
+
+  b) $(-4, 12]$
+
+  c) $(-\infty, 36]$
+
+  d) leere Menge: $\emptyset$

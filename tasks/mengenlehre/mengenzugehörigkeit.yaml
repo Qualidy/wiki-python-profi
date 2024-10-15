@@ -1,0 +1,31 @@
+title: Wer gehört wozu? (mit den Grundmengen)
+question: |
+  Notieren sie für jede Zahl, ob sie zu den folgenden Mengen gehört (:heavy_check_mark:) oder nicht (:material-close-thick:):
+  
+  |             | $\mathbb{N}$ | $\mathbb{Z}$ | $\mathbb{Q}$ | $\mathbb{R}$ |
+  |-------------|--------------|--------------|--------------|--------------|
+  | $-5$        |              |              |              |              |
+  | $4,6$       |              |              |              |              |
+  | $0$         |              |              |              |              |
+  | $3$         |              |              |              |              |
+  | $\sqrt{9}$  |              |              |              |              |
+  | $\sqrt{3}$  |              |              |              |              |      
+  | $0,\bar{5}$ |              |              |              |              |
+
+
+tip: |
+  |                | $\mathbb{N}$            | $\mathbb{Z}$            | $\mathbb{Q}$            | $\mathbb{R}$        |
+  |----------------|-------------------------|-------------------------|-------------------------|---------------------|
+  | $-5$           | :material-close-thick:  | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:  |
+
+solution: |
+  |                | $\mathbb{N}$            | $\mathbb{Z}$            | $\mathbb{Q}$            | $\mathbb{R}$        |
+  |----------------|-------------------------|-------------------------|-------------------------|---------------------|
+  | $-5$           | :material-close-thick:  | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:  |
+  | $4,6$          | :material-close-thick:  | :material-close-thick:  | :heavy_check_mark:      | :heavy_check_mark:  |
+  | $0$            | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:  |
+  | $3$            | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:  |
+  | $\sqrt{9} = 3$ | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:      | :heavy_check_mark:  |
+  | $\sqrt{3}$     | :material-close-thick:  | :material-close-thick:  | :material-close-thick:  | :heavy_check_mark:  |      
+  | $0,\bar{5}$    | :material-close-thick:  | :material-close-thick:  | :heavy_check_mark:      | :heavy_check_mark:  |
+

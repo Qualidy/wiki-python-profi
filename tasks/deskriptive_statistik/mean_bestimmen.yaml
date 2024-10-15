@@ -1,0 +1,23 @@
+title: Arithmetisches Mittel berechnen
+question: |
+  Berechnen Sie das Arithmetische Mittel in den folgenden Fällen: 
+  
+  a) $(8,12,5,17)$   
+
+  b) $(5,3,7,3,4,4)$  
+
+  c) $(5,3,7,3,4,42)$  
+
+  d) $(12,-17,-13,10,8)$  
+
+  e) $(-17,8,12,-13,10)$
+solution: |
+  a) $91$,
+
+  b) $4,\bar{3}$
+
+  c) $10,\bar{6}$
+  
+  d) $0$
+  
+  e) $0$

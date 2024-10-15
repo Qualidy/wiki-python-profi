@@ -1,0 +1,30 @@
+title: "Lineare Funktionen: Ulrichs Handyvertrag"
+question: |
+  Ulrich möchte einen neuen Handyvertrag abschließen. 
+  Nach langer Recherche stößt er auf zwei Tarife, die für ihn in Frage kommen. 
+  Er möchte sein Handy ausschließlich für Telefonie nutzen.
+
+  Tarif A: 15 € monatliche Grundgebühr, 2,5 Cent pro angefangener Minute.
+
+  Tarif B: 5€ monatliche Grundgebühr, 4 Cent pro angefangener Minute.
+
+  a) Stelle die Funktionsgleichungen für beide Tarife auf.
+
+  b) Wann lohnt sich für Ulrich welcher Tarif?
+
+  c) Ulrich telefoniert pro Monat im Schnitt 400 Minuten. Wieviel zahlt er dabei bei beiden Tarifen?
+
+  d) Beschreibe einen Tarif, der folgender Funktionsgleichung entspricht:  
+  $$ 
+  h(x) = 0,06x 
+  $$ 
+solution: |
+  a) Tarif A: $f_A(x) = 0,025x + 15$ 
+     Tarif B: $f_B(x) = 0,04x + 5$
+
+  b) Wenn Ulrich länger als 667 Minuten telefoniert, dann lohnt sich Tarif A, davor lohnt sich Tarif B.
+
+  c)  Kosten für 400 Minuten in Tarif A: 25 € 
+      Kosten für 400 Minuten in Tarif B: 21 €
+
+  d) Tarifbeschreibung: Keine monatliche Grundgebühr, 6 Cent pro angefangener Minute. 

@@ -1,0 +1,6 @@
+title: "Lineare Funktionen: Flächenberechnung"
+question: |
+    Bestimme den Flächeninhalt des Dreiecks, 
+    welches von den Koordinatenachsen und der Gerade $g(x) = 32x + 5$ eingeschlossen wird.
+solution: |
+  $A = \frac{25}{64} \approx 0,39$ 
