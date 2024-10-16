@@ -69,3 +69,28 @@ class Kontakt(BaseModel):
 ```
 
 In diesem Fall wird `kontakt_info` entweder als E-Mail-Adresse oder als einfache Zeichenkette akzeptiert.
+
+### Aufgaben
+
+1. **Produktmodell erstellen:**
+   Erstelle ein Pydantic-Modell `Produkt` mit folgenden Feldern:
+    - `name`: Ein String-Feld mit einer Mindestlänge von 3 Zeichen
+    - `preis`: Ein Float-Feld mit einem Mindestwert von 0
+    - `kategorie`: Ein String-Feld, das nur bestimmte Werte akzeptiert (z.B. "Lebensmittel", "Elektronik", "Kleidung")
+    - `lagerbestand`: Ein optionales Integer-Feld mit einem Standardwert von 0
+
+2. **Benutzermodell mit E-Mail-Validierung:**
+   Erstelle ein Pydantic-Modell `Benutzer` mit folgenden Feldern:
+    - `benutzername`: Ein String-Feld mit einer Mindestlänge von 5 Zeichen
+    - `email`: Ein E-Mail-Feld mit Validierung
+    - `alter`: Ein Integer-Feld mit einem Mindestwert von 18
+    - `passwort`: Ein Feld vom Typ `SecretStr`
+
+3. **Bestellungsmodell mit Validierung:**
+   Erstelle ein Pydantic-Modell `Bestellung` mit folgenden Feldern:
+    - `bestellnummer`: Ein String-Feld mit einem bestimmten Muster (z.B. "ORD-" gefolgt von 6 Ziffern)
+    - `produkte`: Eine Liste von `Produkt`-Objekten (verwende das Modell aus Aufgabe 1)
+    - `gesamtpreis`: Ein berechnetes Feld, das die Summe der Produktpreise darstellt
+    - `bestelldatum`: Ein Datum-Feld mit dem aktuellen Datum als Standardwert
+
+Versuche, diese Modelle zu implementieren und teste sie mit verschiedenen Eingaben. Achte besonders darauf, wie Pydantic die Daten validiert und konvertiert.

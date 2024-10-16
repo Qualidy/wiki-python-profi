@@ -1,4 +1,4 @@
-## Effizienter Code und Arbeitsspeicherressourcen
+# Effizienter Code und Arbeitsspeicherressourcen
 
 In unserer täglichen Arbeit mit Daten ist Effizienz von entscheidender Bedeutung. Egal, ob wir große Datensätze analysieren, Modelle trainieren oder interaktive Dashboards erstellen – effizienter Code und der sparsame Umgang mit Arbeitsspeicherressourcen machen den Unterschied zwischen einem reibungslosen Workflow und Performance-Problemen aus. In diesem Kapitel betrachten wir Python-Optimierungen, die uns helfen, sowohl schneller als auch ressourcenschonender zu arbeiten.
 

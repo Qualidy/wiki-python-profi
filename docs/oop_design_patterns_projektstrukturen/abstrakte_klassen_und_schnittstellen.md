@@ -94,7 +94,7 @@ class Pipeline:
 
 # Pipeline erstellen
 pipeline = Pipeline()
-pipeline.hinzufuegen_schritt(Skalierung())
+#pipeline.hinzufuegen_schritt(Skalierung()) #Funktioniert nur bei numerischen Daten
 pipeline.hinzufuegen_schritt(KategorischeKodierung())
 
 # Beispiel-Daten

@@ -65,6 +65,7 @@ nav:
     - python_polars/index.md
     - Erste Schritte: python_polars/erste_schritte.md
     - Lazy vs. Eager: python_polars/lazy_vs_eager.md
+    - Best Practices: python_polars/best_practices.md
   - Pydantic:
     - pydantic/index.md
     - Fields: pydantic/fields.md

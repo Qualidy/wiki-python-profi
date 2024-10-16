@@ -1,6 +1,3 @@
-Hier ist ein Beispiel für das Git-Kapitel:
-
-```markdown
 # Git für Data Scientists
 
 Git ist ein leistungsstarkes Versionskontrollsystem, das es uns ermöglicht, Änderungen an Code über die Zeit zu verfolgen und mit Teams effizient zusammenzuarbeiten. In diesem Kapitel wiederholen wir kurz die Grundlagen und vertiefen uns dann in fortgeschrittene Themen wie **Rebase**, **Cherry Picking** und **Commit-Konventionen**.

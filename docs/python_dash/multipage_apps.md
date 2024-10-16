@@ -61,5 +61,7 @@ layout = html.Div([
     html.Div('This is our Archive page content.'),
 ])
 ```
+### Aufgabe:
 
+Füge eine weitere Seite hinzu und stelle diese in der Navigationsleiste dar.
 

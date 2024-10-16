@@ -22,7 +22,7 @@ Willkommen im Skript zur Fortgeschrittenenschulung Python.
 
     Schreibe effizienten Code und optimiere Arbeitsspeicherressourcen.
 
-- [:material-graph-outline: **Polars**](polars/index.md)
+- [:material-graph-outline: **Polars**](python_polars/index.md)
 
     ---
 

@@ -86,6 +86,9 @@ app.layout = html.Div(
 if __name__ == '__main__':
     app.run_server(debug=True)
 ```
+### Aufgabe:
+
+**Aufgabe 1:** Kombiniere Inline-Styles und externe Stylesheets in einer Dash-Anwendung. Erstelle eine Tabelle, bei der die Tabellenüberschriften durch Inline-Styles formatiert sind, während die Tabellenzeilen eine Klasse aus einem externen Stylesheet verwenden.
 
 ## Dash Bootstrap
 

@@ -1,4 +1,3 @@
-
 # Best Practices für die Arbeit mit Polars
 
 #### 1. **Nutze Lazy Execution**

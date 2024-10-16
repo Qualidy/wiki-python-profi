@@ -234,8 +234,8 @@ Vermeiden wir das unnötige Zurücksetzen des Index, indem wir die Aggregation d
 grouped = df.groupby('Abteilung')['Gehalt'].mean().reset_index()
 print(grouped)
 ```
-
-### Beispiel 4: Ineffiziente Filterung von DataFrames
+### Aufgabe
+### Aufgabe 3: Ineffiziente Filterung von DataFrames
 
 **Ineffizienter Code**:
 
@@ -249,3 +249,5 @@ df = pd.DataFrame({'Alter': [25, 30, 35, 40, 45]})
 filtered = df[df.apply(lambda row: row['Alter'] > 30, axis=1)]
 print(filtered)
 ```
+
+Optimiere den Code, indem du die Vektorisierung nutzt.

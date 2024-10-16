@@ -1,4 +1,6 @@
-### Klassen in Python – Eine Wiederholung
+# Dekoratoren und Klassen
+
+## Klassen in Python – Eine Wiederholung
 
 Klassen bieten uns eine strukturierte Methode, um Daten und Funktionen zu organisieren und zu kapseln, was insbesondere bei größeren Projekten von Vorteil ist.
 

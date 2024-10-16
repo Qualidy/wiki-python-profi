@@ -41,6 +41,16 @@ In diesem Beispiel wird eine einfache Dash-Anwendung erstellt, die einen Button 
 
 ## Inhaltsverzeichnis
 
+- [Callbacks](#callbacks)
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [Inputs und Outputs](#inputs-und-outputs)
+    - [Callbacks mit mehreren Inputs/Outputs](#callbacks-mit-mehreren-inputsoutputs)
+  - [State](#state)
+  - [Speichereffizienz in Dash](#speichereffizienz-in-dash)
+    - [Aufrufen des Callbacks bei Initialisierung](#aufrufen-des-callbacks-bei-initialisierung)
+    - [Verwendung von `prevent_initial_call`](#verwendung-von-prevent_initial_call)
+    - [Caching von Ergebnissen](#caching-von-ergebnissen)
+    - [Patch für partielle Updates](#patch-für-partielle-updates)
 
 ## Inputs und Outputs
 
@@ -165,7 +175,7 @@ def update_output(n_clicks, value):
 
 In diesem Beispiel wird ein Eingabefeld (`dcc.Input`), ein Button (`html.Button`) und ein Textfeld (`html.Div`) erstellt. Der Text im Textfeld wird aktualisiert, wenn der Button geklickt wird. Die Callback-Funktion `update_output` wird aufgerufen, wenn der Button geklickt wird, und aktualisiert den Text basierend auf der Anzahl der Klicks und dem Wert im Eingabefeld.
 
-## Speicehreffiizienz in Dash
+## Speichereffizienz in Dash
 
 Normalerweise werden Callback-Funktionen in Dash serverseitig aufgerufen, wenn ein Ereignis eintritt. Dies kann bei vielen Aufrufen und großen Datenmengen zu einer Verzögerung führen, die wir vermeiden möchten. Wir werden uns nun einige Möglichkeiten ansehen, um Ressourcen zu schonen und die Effizienz von Dash-Anwendungen zu verbessern.
 
@@ -265,5 +275,18 @@ if __name__ == '__main__':
 
 In diesem Beispiel wird ein Eingabefeld (`dcc.Input`) und ein Textfeld (`html.Div`) erstellt. Der Text im Textfeld wird aktualisiert, wenn der Wert im Eingabefeld geändert wird. Die Callback-Funktion `update_output` wird die Ergebnisse cachen, um Ressourcen zu sparen.
 
-### Patch für partielle Updates
+### Aufgabe:
 
+Erstellen Sie ein Dashboard mit folgenden Komponenten und Funktionen:
+
+1. Zwei Eingabefelder (`dcc.Input`) für numerische Werte.
+2. Ein Dropdown-Menü (`dcc.Dropdown`) mit verschiedenen mathematischen Operationen (Addition, Subtraktion, Multiplikation, Division).
+3. Ein Button zum Ausführen der Berechnung.
+4. Zwei Ausgabefelder (`html.Div`):
+    - Ein Feld, das das Ergebnis der Berechnung anzeigt.
+    - Ein Feld, das die Anzahl der Berechnungen anzeigt.
+
+Verwenden Sie einen Callback mit mehreren Inputs (die beiden Eingabefelder und das Dropdown-Menü) und mehreren Outputs (die beiden Ausgabefelder).
+Nutzen Sie den `State` für die Eingabefelder und das Dropdown-Menü, sodass die Berechnung erst bei Knopfdruck ausgeführt wird.
+Verwenden Sie `prevent_initial_call=True`, um zu verhindern, dass der Callback bei der Initialisierung aufgerufen wird.
+Implementieren Sie eine einfache Caching-Strategie für die Berechnungsfunktion.
