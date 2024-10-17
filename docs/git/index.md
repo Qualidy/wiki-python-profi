@@ -1,9 +1,5 @@
-Hier ist ein Beispiel für das Git-Kapitel:
 
-```markdown
-# Git für Data Scientists
-
-Git ist ein leistungsstarkes Versionskontrollsystem, das es uns ermöglicht, Änderungen an Code über die Zeit zu verfolgen und mit Teams effizient zusammenzuarbeiten. In diesem Kapitel wiederholen wir kurz die Grundlagen und vertiefen uns dann in fortgeschrittene Themen wie **Rebase**, **Cherry Picking** und **Commit-Konventionen**.
+Git ist ein Versionskontrollsystem, das es uns ermöglicht, Änderungen an Code über die Zeit zu verfolgen und mit Teams effizient zusammenzuarbeiten. In diesem Kapitel wiederholen wir kurz die Grundlagen und vertiefen uns dann in fortgeschrittene Themen wie **Rebase**, **Cherry Picking** und **Commit-Konventionen**.
 
 ## 1. Grundlagen von Git
 
@@ -43,7 +39,7 @@ Bevor wir in fortgeschrittenere Themen eintauchen, wiederholen wir die wichtigst
 
 ### 2.1 Git Rebase
 
-**Rebase** ist ein leistungsfähiges Tool, das es uns erlaubt, eine saubere Versionsgeschichte zu erstellen, indem wir Änderungen aus einem Branch auf einem anderen neu anwenden, anstatt sie zu mergen. Während ein **Merge** alle Commits aus beiden Branches beibehält und einen "Merge-Commit" erstellt, ordnet Rebase die Commits neu an, sodass sie auf der Spitze des Ziel-Branches erscheinen, als ob sie von Anfang an dort gewesen wären.
+Mit **Rebase** können wir eine saubere Versionsgeschichte zu erstellen, indem wir Änderungen aus einem Branch auf einem anderen neu anwenden, anstatt sie zu mergen. Während ein **Merge** alle Commits aus beiden Branches beibehält und einen "Merge-Commit" erstellt, ordnet Rebase die Commits neu an, sodass sie auf der Spitze des Ziel-Branches erscheinen, als ob sie von Anfang an dort gewesen wären.
 
 #### Wann sollte Rebase verwendet werden?
 
