@@ -29,6 +29,10 @@ extra_javascript:
 extra_css:
   - stylesheets/style.css
   - stylesheets/video_admonition.css
+  - stylesheets/logo.css
+  - stylesheets/mermaid.css
+  - stylesheets/grid.css
+  - stylesheets/python_tutor_admonition.css
 
 theme:
   name: material
