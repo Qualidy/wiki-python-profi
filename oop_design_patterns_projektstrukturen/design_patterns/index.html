@@ -1,0 +1,1971 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../abstrakte_klassen_und_schnittstellen/">
+      
+      
+        <link rel="next" href="../projektstrukturen/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+    
+    
+      
+        <title>Design Patterns - Python Fortgeschritten</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/style.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/python_tutor_admonition.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#design-patterns-in-data-science-projekten" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python Fortgeschritten" class="md-header__button md-logo" aria-label="Python Fortgeschritten" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Fortgeschritten
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design Patterns
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python Fortgeschritten" class="md-nav__button md-logo" aria-label="Python Fortgeschritten" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Python Fortgeschritten
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../python_dash/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Dash
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_dash/erste_schritte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erste Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_dash/layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_dash/styles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Styles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_dash/callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_dash/multipage_apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multipage Apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_dash/dcc_store/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dash dcc.Store
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../python_polars/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Polars
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Polars
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_polars/erste_schritte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erste Schritte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_polars/lazy_vs_eager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lazy vs. Eager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_polars/best_practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pydantic/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Pydantic
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Pydantic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/eigene_felder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eigene Felder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schemata
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pydantic/dataclasses/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dataclasses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pytest/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Pytest
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Pytest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pytest/fixtures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fixtures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pytest/parametrisierte_tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parametrisierte Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pytest/best_practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../effizienter_code_und_arbeitsspeicherressourcen/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Effizienter Code & Arbeitsspeicherressourcen
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Effizienter Code & Arbeitsspeicherressourcen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../effizienter_code_und_arbeitsspeicherressourcen/arbeitsspeicher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arbeitsspeicher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../effizienter_code_und_arbeitsspeicherressourcen/effizienter_code_in_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Effizienter Code in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../effizienter_code_und_arbeitsspeicherressourcen/effizienter_code_im_umgang_mit_daten/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Effizienter Code im Umgang mit Daten
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dekoratoren_und_klassen/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Dekoratoren und Klassen
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Dekoratoren und Klassen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dekoratoren_und_klassen/dekoratoren/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dekoratoren
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dekoratoren_und_klassen/erweiterte_klassen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Klassen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../git/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/gitignore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    .gitignore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/best_practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    OOP, Design Patterns & Projektstrukturen
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OOP, Design Patterns & Projektstrukturen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prinzipien_oop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prinzipien OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abstrakte_klassen_und_schnittstellen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstrakte Klassen und Schnittstellen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Design Patterns
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Design Patterns
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vorteile-der-nutzung-von-design-patterns-in-data-science-projekten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vorteile der Nutzung von Design Patterns in Data Science Projekten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creational-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creational Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creational Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factory-pattern-erzeugen-von-datenverarbeitungsobjekten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factory Pattern: Erzeugen von Datenverarbeitungsobjekten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singleton-pattern-sicherstellen-dass-nur-eine-datenbankverbindung-existiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singleton Pattern: Sicherstellen, dass nur eine Datenbankverbindung existiert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structural-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structural Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structural Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adapter-pattern-anpassung-verschiedener-datenquellen-an-eine-einheitliche-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adapter Pattern: Anpassung verschiedener Datenquellen an eine einheitliche API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decorator-pattern-erweiterung-von-datenverarbeitungsfunktionen-zb-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorator Pattern: Erweiterung von Datenverarbeitungsfunktionen (z.B. Logging)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavioral-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behavioral Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behavioral Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#observer-pattern-ereignisgesteuerte-updates-fur-groe-datenverarbeitungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observer Pattern: Ereignisgesteuerte Updates für große Datenverarbeitungen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-pattern-austauschbare-algorithmen-fur-die-datenanalyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy Pattern: Austauschbare Algorithmen für die Datenanalyse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktische-implementierung-von-design-patterns-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Praktische Implementierung von Design Patterns in Python
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projektstrukturen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projektstrukturen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best_practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vorteile-der-nutzung-von-design-patterns-in-data-science-projekten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vorteile der Nutzung von Design Patterns in Data Science Projekten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creational-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creational Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creational Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factory-pattern-erzeugen-von-datenverarbeitungsobjekten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Factory Pattern: Erzeugen von Datenverarbeitungsobjekten
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singleton-pattern-sicherstellen-dass-nur-eine-datenbankverbindung-existiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singleton Pattern: Sicherstellen, dass nur eine Datenbankverbindung existiert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structural-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structural Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structural Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adapter-pattern-anpassung-verschiedener-datenquellen-an-eine-einheitliche-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adapter Pattern: Anpassung verschiedener Datenquellen an eine einheitliche API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decorator-pattern-erweiterung-von-datenverarbeitungsfunktionen-zb-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorator Pattern: Erweiterung von Datenverarbeitungsfunktionen (z.B. Logging)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavioral-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behavioral Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behavioral Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#observer-pattern-ereignisgesteuerte-updates-fur-groe-datenverarbeitungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observer Pattern: Ereignisgesteuerte Updates für große Datenverarbeitungen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategy-pattern-austauschbare-algorithmen-fur-die-datenanalyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategy Pattern: Austauschbare Algorithmen für die Datenanalyse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praktische-implementierung-von-design-patterns-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Praktische Implementierung von Design Patterns in Python
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="design-patterns-in-data-science-projekten">Design Patterns in Data Science Projekten</h1>
+<p>Design Patterns sind wiederkehrende Lösungsansätze für häufig auftretende Entwurfsprobleme in der Softwareentwicklung. In Data Science Projekten, die oft komplexe und sich wiederholende Prozesse beinhalten, können Design Patterns dabei helfen, Code wartbarer, flexibler und effizienter zu gestalten. Der Einsatz von Design Patterns ermöglicht eine klare Strukturierung von Projekten, die das Verständnis und die Zusammenarbeit im Team erleichtert. Im Folgenden gehen wir auf einige wichtige Design Patterns ein, die in Data Science Projekten nützlich sein können.</p>
+<h2 id="vorteile-der-nutzung-von-design-patterns-in-data-science-projekten">Vorteile der Nutzung von Design Patterns in Data Science Projekten</h2>
+<ol>
+<li><strong>Wartbarkeit</strong>: Muster sorgen für einen strukturierten und modularen Code, der leichter zu pflegen ist.</li>
+<li><strong>Wiederverwendbarkeit</strong>: Einmal implementierte Design Patterns können in anderen Projekten oder Szenarien wiederverwendet werden.</li>
+<li><strong>Erweiterbarkeit</strong>: Mit Patterns wird es einfacher, neuen Code hinzuzufügen, ohne den bestehenden Code zu ändern oder zu brechen.</li>
+<li><strong>Teamarbeit</strong>: Klar definierte Muster erleichtern es Teams, sich in bestehende Codebasen einzuarbeiten und an einem Projekt zu arbeiten.</li>
+<li><strong>Effizienz</strong>: Durch die Verwendung optimierter Lösungen lassen sich häufige Probleme schneller und eleganter lösen.</li>
+</ol>
+<h2 id="creational-patterns">Creational Patterns</h2>
+<p>Diese Muster befassen sich mit der Erzeugung von Objekten. Im Kontext von Data Science helfen sie, Objekte wie Datenquellen oder Datenverarbeitungsmodelle auf flexible Weise zu erzeugen.</p>
+<h3 id="factory-pattern-erzeugen-von-datenverarbeitungsobjekten"><strong>Factory Pattern: Erzeugen von Datenverarbeitungsobjekten</strong></h3>
+<p>Das Factory Pattern wird verwendet, um Objekte zu erstellen, ohne die genauen Klassen anzugeben. In Data Science können wir es verwenden, um unterschiedliche Datenquellen (z.B. CSV, SQL, API) mit einer einheitlichen Methode zu erstellen.</p>
+<p><strong>Beispiel: Factory Pattern für Datenquellen</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">DatenQuelleFactory</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">erstelle_datenquelle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">typ</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;csv&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">CSVQuelle</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;dateipfad&#39;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;sql&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SQLQuelle</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;verbindungsstring&#39;</span><span class="p">],</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;query&#39;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">typ</span> <span class="o">==</span> <span class="s1">&#39;api&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">APIQuelle</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">])</span>
+
+<span class="c1"># Verwendung</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">DatenQuelleFactory</span><span class="p">()</span>
+<span class="n">datenquelle</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">erstelle_datenquelle</span><span class="p">(</span><span class="s1">&#39;csv&#39;</span><span class="p">,</span> <span class="n">dateipfad</span><span class="o">=</span><span class="s1">&#39;daten.csv&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="singleton-pattern-sicherstellen-dass-nur-eine-datenbankverbindung-existiert"><strong>Singleton Pattern: Sicherstellen, dass nur eine Datenbankverbindung existiert</strong></h3>
+<p>Das Singleton Pattern wird verwendet, um sicherzustellen, dass eine Klasse nur eine einzige Instanz hat. Bei der Verbindung zu Datenbanken ist es oft sinnvoll, nur eine Verbindung offen zu halten, um Ressourcen zu schonen.</p>
+<p><strong>Beispiel: Singleton Pattern für Datenbankverbindung</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Datenbankverbindung</span><span class="p">:</span>
+    <span class="n">_instance</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Datenbankverbindung</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+            <span class="c1"># Simulierte Verbindung</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span><span class="o">.</span><span class="n">verbindung</span> <span class="o">=</span> <span class="s2">&quot;SQL Datenbank Verbindung&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span>
+
+<span class="c1"># Verwendung</span>
+<span class="n">verbindung1</span> <span class="o">=</span> <span class="n">Datenbankverbindung</span><span class="p">()</span>
+<span class="n">verbindung2</span> <span class="o">=</span> <span class="n">Datenbankverbindung</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">verbindung1</span> <span class="ow">is</span> <span class="n">verbindung2</span><span class="p">)</span>  <span class="c1"># True</span>
+</code></pre></div>
+<h2 id="structural-patterns">Structural Patterns</h2>
+<p>Diese Muster befassen sich mit der Strukturierung von Klassen und Objekten und deren Zusammensetzung.</p>
+<h3 id="adapter-pattern-anpassung-verschiedener-datenquellen-an-eine-einheitliche-api"><strong>Adapter Pattern: Anpassung verschiedener Datenquellen an eine einheitliche API</strong></h3>
+<p>Das Adapter Pattern hilft, Schnittstellen inkompatibler Klassen anzupassen, ohne die Klassen selbst zu verändern. In Data Science können wir dieses Muster nutzen, um verschiedene Datenquellen (z.B. CSV, SQL, APIs) so anzupassen, dass sie alle mit derselben API angesprochen werden können.</p>
+<p><strong>Beispiel: Adapter Pattern für Datenquellen</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CSVAdapter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">csv_quelle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">csv_quelle</span> <span class="o">=</span> <span class="n">csv_quelle</span>
+
+    <span class="k">def</span> <span class="nf">lade_daten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">csv_quelle</span><span class="o">.</span><span class="n">lade_daten</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">SQLAdapter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql_quelle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sql_quelle</span> <span class="o">=</span> <span class="n">sql_quelle</span>
+
+    <span class="k">def</span> <span class="nf">lade_daten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_quelle</span><span class="o">.</span><span class="n">lade_daten</span><span class="p">()</span>
+
+<span class="c1"># Jetzt können beide Quellen mit der gleichen Methode verwendet werden</span>
+</code></pre></div>
+<h3 id="decorator-pattern-erweiterung-von-datenverarbeitungsfunktionen-zb-logging"><strong>Decorator Pattern: Erweiterung von Datenverarbeitungsfunktionen (z.B. Logging)</strong></h3>
+<p>Mit dem Decorator Pattern können wir bestehenden Funktionen zusätzliche Funktionalitäten hinzufügen, ohne sie zu verändern. Beispielsweise könnten wir eine Datenverarbeitungsfunktion erweitern, um automatisch Log-Einträge zu erstellen.</p>
+<p><strong>Beispiel: Decorator für Logging in Pandas</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">log_verarbeitung</span><span class="p">(</span><span class="n">funktion</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Start der Verarbeitung: </span><span class="si">{</span><span class="n">funktion</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">funktion</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ende der Verarbeitung: </span><span class="si">{</span><span class="n">funktion</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ergebnis</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@log_verarbeitung</span>
+<span class="k">def</span> <span class="nf">bereinige_daten</span><span class="p">(</span><span class="n">daten</span><span class="p">):</span>
+    <span class="c1"># Simulierte Bereinigung</span>
+    <span class="k">return</span> <span class="n">daten</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Verwendung</span>
+<span class="n">daten</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Alter&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">47</span><span class="p">],</span> <span class="s2">&quot;Geschlecht&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;männlich&#39;</span><span class="p">,</span> <span class="s1">&#39;weiblich&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]})</span>
+<span class="n">bereinige_daten</span><span class="p">(</span><span class="n">daten</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="behavioral-patterns">Behavioral Patterns</h2>
+<p>Behavioral Patterns befassen sich mit der Interaktion zwischen Objekten und der Zuweisung von Verantwortlichkeiten.</p>
+<h3 id="observer-pattern-ereignisgesteuerte-updates-fur-groe-datenverarbeitungen"><strong>Observer Pattern: Ereignisgesteuerte Updates für große Datenverarbeitungen</strong></h3>
+<p>Das Observer Pattern ermöglicht es Objekten, auf Änderungen oder Ereignisse zu reagieren. In Data Science Projekten können wir dieses Muster verwenden, um bestimmte Aktionen automatisch auszuführen, wenn Daten sich ändern, z.B. bei Live-Datenverarbeitungen oder Dashboards.</p>
+<p><strong>Beispiel: Observer Pattern für Datenverarbeitung</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Beobachter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">LoggingBeobachter</span><span class="p">(</span><span class="n">Beobachter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Neue Daten verarbeitet: </span><span class="si">{</span><span class="n">daten</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">DatenVerarbeiter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beobachter</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">hinzufuegen_beobachter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beobachter</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beobachter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">beobachter</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">verarbeite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="c1"># Simulierte Datenverarbeitung</span>
+        <span class="k">for</span> <span class="n">beobachter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">beobachter</span><span class="p">:</span>
+            <span class="n">beobachter</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">daten</span><span class="p">)</span>
+
+<span class="c1"># Verwendung</span>
+<span class="n">verarbeiter</span> <span class="o">=</span> <span class="n">DatenVerarbeiter</span><span class="p">()</span>
+<span class="n">verarbeiter</span><span class="o">.</span><span class="n">hinzufuegen_beobachter</span><span class="p">(</span><span class="n">LoggingBeobachter</span><span class="p">())</span>
+<span class="n">verarbeiter</span><span class="o">.</span><span class="n">verarbeite</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Alter&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">47</span><span class="p">]}))</span>
+</code></pre></div>
+<h3 id="strategy-pattern-austauschbare-algorithmen-fur-die-datenanalyse"><strong>Strategy Pattern: Austauschbare Algorithmen für die Datenanalyse</strong></h3>
+<p>Das Strategy Pattern ermöglicht es, Algorithmen zur Laufzeit auszutauschen, ohne den restlichen Code zu ändern. In Data Science Projekten kann dies verwendet werden, um unterschiedliche Machine Learning Modelle dynamisch zu laden und anzuwenden.</p>
+<p><strong>Beispiel: Strategy Pattern für Machine Learning Modelle</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ModellStrategie</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">trainiere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">LineareRegression</span><span class="p">(</span><span class="n">ModellStrategie</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">trainiere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training mit Linearer Regression&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Entscheidungsbaum</span><span class="p">(</span><span class="n">ModellStrategie</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">trainiere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training mit Entscheidungsbaum&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ModellTrainer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strategie</span><span class="p">:</span> <span class="n">ModellStrategie</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategie</span> <span class="o">=</span> <span class="n">strategie</span>
+
+    <span class="k">def</span> <span class="nf">setze_strategie</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strategie</span><span class="p">:</span> <span class="n">ModellStrategie</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategie</span> <span class="o">=</span> <span class="n">strategie</span>
+
+    <span class="k">def</span> <span class="nf">trainiere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">daten</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategie</span><span class="o">.</span><span class="n">trainiere</span><span class="p">(</span><span class="n">daten</span><span class="p">)</span>
+
+<span class="c1"># Verwendung</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">ModellTrainer</span><span class="p">(</span><span class="n">LineareRegression</span><span class="p">())</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">trainiere</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Feature1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;Ziel&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}))</span>
+
+<span class="c1"># Strategie ändern</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">setze_strategie</span><span class="p">(</span><span class="n">Entscheidungsbaum</span><span class="p">())</span>
+<span class="n">trainer</span><span class="o">.</span><span class="n">trainiere</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Feature1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;Ziel&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}))</span>
+</code></pre></div>
+<h2 id="praktische-implementierung-von-design-patterns-in-python">Praktische Implementierung von Design Patterns in Python</h2>
+<p>Python bietet durch seine dynamische Natur und flexiblen Sprachfeatures viele Möglichkeiten, Design Patterns einfach zu implementieren. Eine Herausforderung dabei ist, dass Python weniger strikte Typensysteme als andere Sprachen hat, was zu weniger offensichtlichen Fehlern führen kann. Die konsequente Verwendung von Patterns kann hier helfen, Struktur und Sicherheit in Projekte zu bringen.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../abstrakte_klassen_und_schnittstellen/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Abstrakte Klassen und Schnittstellen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Abstrakte Klassen und Schnittstellen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../projektstrukturen/" class="md-footer__link md-footer__link--next" aria-label="Next: Projektstrukturen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Projektstrukturen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.kununu.com/de/qualidy" target="_blank" rel="noopener" title="www.kununu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M311 86.3c12.3-12.7 12-32.9-.7-45.2s-32.9-12-45.2.7l-155.2 160L64 249V64c0-17.7-14.3-32-32-32S0 46.3 0 64v384c0 17.7 14.3 32 32 32s32-14.3 32-32V341l64.7-66.7 133 192c10.1 14.5 30 18.1 44.5 8.1s18.1-30 8.1-44.5L174.1 227.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF" target="_blank" rel="noopener" title="www.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.4c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.3c2.2 20.4 3.3 41.8 3.3 64m28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64m112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7m-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6M8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64m186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.7z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

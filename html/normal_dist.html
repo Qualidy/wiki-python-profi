@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Normal Distribution Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 10px;
+            margin: 10px 0;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        input[type="number"], input[type="range"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 80px;
+        }
+
+        #bucketsValue {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        canvas {
+            margin-top: 30px;
+        }
+
+        #matrix-container {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: block;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        td {
+            transition: background-color 0.2s;
+        }
+
+        td.highlight {
+            background-color: rgba(255, 99, 132, 0.6); /* Matching highlight color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Normal Distribution Visualization</h1>
+    <div class="container">
+        <div class="input-group">
+            <label for="mean">Mean:</label>
+            <input type="number" id="mean" value="0">
+        </div>
+        <div class="input-group">
+            <label for="stdDev">Standard Deviation:</label>
+            <input type="number" id="stdDev" value="1">
+        </div>
+        <div class="input-group">
+            <label for="samples">Number of Samples (1-30000):</label>
+            <input type="number" id="samples" value="1000" min="1" max="30000">
+        </div>
+        <div class="input-group">
+            <label for="buckets">Number of Buckets (1-50):</label>
+            <div>
+                <input type="range" id="buckets" value="10" min="1" max="50">
+                <span id="bucketsValue">10</span>
+            </div>
+        </div>
+        <div id="matrix-container">
+            <table id="matrix-table"></table>
+        </div>
+    </div>
+    <canvas id="histogram"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.getElementById('buckets').addEventListener('input', function() {
+            document.getElementById('bucketsValue').innerText = this.value;
+        });
+
+        let histogramChart;
+        let samples = [];
+
+        function generateNormalSamples(mean, stdDev, numSamples) {
+            let samples = [];
+            for (let i = 0; i < numSamples; i++) {
+                let u = Math.random();
+                let v = Math.random();
+                let z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+                samples.push(z * stdDev + mean);
+            }
+            return samples;
+        }
+
+        function createHistogram(samples, numBuckets) {
+            let min = Math.min(...samples);
+            let max = Math.max(...samples);
+            let bucketSize = (max - min) / numBuckets;
+
+            let buckets = new Array(numBuckets).fill(0);
+            samples.forEach(sample => {
+                let bucketIndex = Math.min(
+                    Math.floor((sample - min) / bucketSize),
+                    numBuckets - 1
+                );
+                buckets[bucketIndex]++;
+            });
+
+            return {
+                labels: buckets.map((_, i) => (min + i * bucketSize).toFixed(2)),
+                data: buckets,
+                min: min,
+                max: max,
+                bucketSize: bucketSize
+            };
+        }
+
+        function updateChart(chart, histogramData) {
+            chart.data.labels = histogramData.labels;
+            chart.data.datasets[0].data = histogramData.data;
+            chart.update();
+
+            // Update the matrix view
+            updateMatrixView(samples, histogramData);
+        }
+
+        function updateMatrixView(samples, histogramData) {
+            const table = document.getElementById('matrix-table');
+            table.innerHTML = ''; // Clear previous matrix
+
+            let headerRow = document.createElement('tr');
+            let headerCell = document.createElement('th');
+            headerCell.colSpan = 10;
+            headerCell.innerText = 'Generated Samples';
+            headerRow.appendChild(headerCell);
+            table.appendChild(headerRow);
+
+            let row;
+            samples.forEach((sample, index) => {
+                if (index % 10 === 0) {
+                    row = document.createElement('tr');
+                    table.appendChild(row);
+                }
+                let cell = document.createElement('td');
+                cell.innerText = sample.toFixed(2);
+                cell.dataset.bucketIndex = Math.min(
+                    Math.floor((sample - histogramData.min) / histogramData.bucketSize),
+                    histogramData.data.length - 1
+                );
+
+                // Mouse hover to highlight chart bucket
+                cell.addEventListener('mouseover', () => {
+                    let bucketIndex = cell.dataset.bucketIndex;
+                    highlightBucket(bucketIndex);
+                });
+
+                cell.addEventListener('mouseout', () => {
+                    resetHighlight();
+                });
+
+                row.appendChild(cell);
+            });
+        }
+
+        function highlightBucket(bucketIndex) {
+            // Matching highlight color
+            const highlightColor = 'rgba(255, 99, 132, 0.6)';
+            histogramChart.data.datasets[0].backgroundColor = histogramChart.data.datasets[0].data.map((_, i) =>
+                i == bucketIndex ? highlightColor : 'rgba(75, 192, 192, 0.2)'
+            );
+            histogramChart.update('none');
+        }
+
+        function resetHighlight() {
+            histogramChart.data.datasets[0].backgroundColor = histogramChart.data.datasets[0].data.map(() =>
+                'rgba(75, 192, 192, 0.2)'
+            );
+            histogramChart.update('none');
+        }
+
+        function highlightMatrixCells(bucketIndex) {
+            const cells = document.querySelectorAll('#matrix-table td');
+            cells.forEach(cell => {
+                if (cell.dataset.bucketIndex == bucketIndex) {
+                    cell.classList.add('highlight');
+                }
+            });
+        }
+
+        function resetMatrixHighlight() {
+            const cells = document.querySelectorAll('#matrix-table td');
+            cells.forEach(cell => cell.classList.remove('highlight'));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            let ctx = document.getElementById('histogram').getContext('2d');
+            histogramChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Frequency',
+                        data: [],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        hoverBackgroundColor: 'rgba(255, 99, 132, 0.6)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    interaction: {
+                      mode: 'nearest',
+                      intersect: true,
+                      axis: 'x',
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Value' } },
+                        y: { title: { display: true, text: 'Frequency' } }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return `Count: ${tooltipItem.raw}`;
+                                }
+                            }
+                        },
+                        legend: {
+                            display: false // Hide legend
+                        }
+                    },
+                    onHover: (event, chartElements) => {
+                        resetMatrixHighlight();
+                        if (chartElements.length) {
+                            const bucketIndex = chartElements[0].index;
+                            highlightMatrixCells(bucketIndex);
+                        }
+                    }
+                }
+            });
+            // Initial data generation
+            let mean = parseFloat(document.getElementById('mean').value);
+            let stdDev = parseFloat(document.getElementById('stdDev').value);
+            let numSamples = parseInt(document.getElementById('samples').value);
+            let numBuckets = parseInt(document.getElementById('buckets').value);
+            samples = generateNormalSamples(mean, stdDev, numSamples);
+            let histogramData = createHistogram(samples, numBuckets);
+            updateChart(histogramChart, histogramData);
+
+            // Event listeners for updating the chart
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', function() {
+                    mean = parseFloat(document.getElementById('mean').value);
+                    stdDev = parseFloat(document.getElementById('stdDev').value);
+                    numSamples = parseInt(document.getElementById('samples').value);
+                    numBuckets = parseInt(document.getElementById('buckets').value);
+
+                    samples = generateNormalSamples(mean, stdDev, numSamples);
+                    let histogramData = createHistogram(samples, numBuckets);
+                    updateChart(histogramChart, histogramData);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
