@@ -1,4 +1,4 @@
-In diesem Abschnitt beschäftigen wir uns mit einem der wichtigsten Konzepte in PyTest: den **Fixtures**. Fixtures sind eine leistungsstarke Möglichkeit, Testdaten oder Testumgebungen bereitzustellen, die wir in unseren Tests wiederverwenden können. Dadurch wird nicht nur der Code aufgeräumter, sondern wir vermeiden auch unnötige Wiederholungen. 
+In diesem Abschnitt beschäftigen wir uns mit einem der wichtigsten Konzepte in PyTest: den **Fixtures**. Fixtures sind eine Möglichkeit, Testdaten oder Testumgebungen bereitzustellen, die wir in unseren Tests wiederverwenden können. Dadurch wird nicht nur der Code aufgeräumter, sondern wir vermeiden auch unnötige Wiederholungen. 
 
 ### Was sind Fixtures?
 

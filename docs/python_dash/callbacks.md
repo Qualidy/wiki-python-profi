@@ -44,13 +44,12 @@ In diesem Beispiel wird eine einfache Dash-Anwendung erstellt, die einen Button 
 - [Callbacks](#callbacks)
   - [Inhaltsverzeichnis](#inhaltsverzeichnis)
   - [Inputs und Outputs](#inputs-und-outputs)
-    - [Callbacks mit mehreren Inputs/Outputs](#callbacks-mit-mehreren-inputsoutputs)
+    - [Callbacks mit mehreren Inputs/ Outputs](#callbacks-mit-mehreren-inputs-outputs)
   - [State](#state)
   - [Speichereffizienz in Dash](#speichereffizienz-in-dash)
     - [Aufrufen des Callbacks bei Initialisierung](#aufrufen-des-callbacks-bei-initialisierung)
     - [Verwendung von `prevent_initial_call`](#verwendung-von-prevent_initial_call)
-    - [Caching von Ergebnissen](#caching-von-ergebnissen)
-    - [Patch für partielle Updates](#patch-für-partielle-updates)
+    - [Aufgabe:](#aufgabe)
 
 ## Inputs und Outputs
 
@@ -242,7 +241,7 @@ if __name__ == '__main__':
 
 In diesem Beispiel wird ein Eingabefeld (`dcc.Input`) und ein Textfeld (`html.Div`) erstellt. Der Text im Textfeld wird aktualisiert, wenn der Wert im Eingabefeld geändert wird. Die Callback-Funktion `update_output` wird nur aufgerufen, wenn der Wert im Eingabefeld geändert wird, nicht bei der Initialisierung der Anwendung.
 
-### Caching von Ergebnissen
+<!-- ### Caching von Ergebnissen
 
 Eine weitere Möglichkeit, Ressourcen zu schonen, ist das Caching von Ergebnissen. Das Caching ermöglicht es, die Ergebnisse von teuren Berechnungen zu speichern und bei Bedarf wiederzuverwenden.
 
@@ -273,7 +272,7 @@ if __name__ == '__main__':
     app.run_server(debug=True)
 ```
 
-In diesem Beispiel wird ein Eingabefeld (`dcc.Input`) und ein Textfeld (`html.Div`) erstellt. Der Text im Textfeld wird aktualisiert, wenn der Wert im Eingabefeld geändert wird. Die Callback-Funktion `update_output` wird die Ergebnisse cachen, um Ressourcen zu sparen.
+In diesem Beispiel wird ein Eingabefeld (`dcc.Input`) und ein Textfeld (`html.Div`) erstellt. Der Text im Textfeld wird aktualisiert, wenn der Wert im Eingabefeld geändert wird. Die Callback-Funktion `update_output` wird die Ergebnisse cachen, um Ressourcen zu sparen. -->
 
 ### Aufgabe:
 

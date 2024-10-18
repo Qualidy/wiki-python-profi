@@ -52,7 +52,7 @@ del df
 
 #### Vektorisierung nutzen
 
-Auch Polars bietet leistungsstarke vektorisierte Operationen, die wir nutzen können.
+Auch Polars bietet vektorisierte Operationen:
 
 **Beispiel**:
 

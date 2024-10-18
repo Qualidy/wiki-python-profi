@@ -4,7 +4,7 @@ Die Effizienz unseres Python-Codes hat einen direkten Einfluss auf die Leistung 
 
 ## Verwendung von `lru_cache`
 
-Der `lru_cache`-Dekorator aus dem `functools`-Modul ist ein leistungsstarkes Werkzeug, um die Leistung von Funktionen zu steigern, die häufig mit denselben Argumenten aufgerufen werden. Er speichert die Ergebnisse von Funktionsaufrufen und gibt sie zurück, wenn die Funktion erneut mit denselben Argumenten aufgerufen wird, wodurch unnötige Berechnungen vermieden und die Ausführungszeit reduziert wird.
+Der `lru_cache`-Dekorator aus dem `functools`-Modul ist ein Tools, mit dem wir die Leistung von Funktionen zu steigern, die häufig mit denselben Argumenten aufgerufen werden. Er speichert die Ergebnisse von Funktionsaufrufen und gibt sie zurück, wenn die Funktion erneut mit denselben Argumenten aufgerufen wird, wodurch unnötige Berechnungen vermieden und die Ausführungszeit reduziert wird.
 
 ### Beispiel
 
