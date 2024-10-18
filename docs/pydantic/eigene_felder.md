@@ -5,7 +5,7 @@ In pydantic haben wir 2 Möglichkeiten, um eine eigene Validierung eines Feldes 
 
 ## Eigene Felder
 
-Wir können in pydantic auch eigene Felder definieren, die spezielle Validierungen oder Konvertierungen durchführen. Dies kann beispielsweise sinnvolls ein, wenn wir eine eigene Logik für die Validierung von Daten benötigen, die über die Standardfelder von pydantic hinausgeht. 
+Wir können in pydantic auch eigene Felder definieren, die spezielle Validierungen oder Konvertierungen durchführen. Dies kann beispielsweise sinnvoll sein, wenn wir eine eigene Logik für die Validierung von Daten benötigen, die über die Standardfelder von pydantic hinausgeht. 
 
 Stellen wir uns vor, wir möchten eine Klasse Produkt erstellen und haben ein spezielles Feld `Price`, das den Preis eines Produkts repräsentiert. Der Preis soll als Dezimalzahl mit zwei Nachkommastellen gespeichert werden und muss größer oder gleich Null sein. Wir können ein benutzerdefiniertes Feld `PriceField` erstellen, das diese Validierung durchführt.
 
@@ -19,7 +19,7 @@ class PriceField(Decimal):
         yield cls.validate
 
     @classmethod
-    def validate(cls, value):
+    def validate(cls, value, field, **kwargs):
         if not isinstance(value, Decimal):
             try:
                 value = Decimal(value)
@@ -47,7 +47,7 @@ In diesem Beispiel definieren wir das benutzerdefinierte Feld `PriceField`, das 
 Wir verwenden das benutzerdefinierte Feld `PriceField` in der Klasse `Produkt`, um den Preis eines Produkts zu validieren. Wenn wir versuchen, ein `Produkt`-Objekt mit einem ungültigen Preis zu erstellen, wird eine `ValidationError` ausgelöst.
 
 Durch die Definition benutzerdefinierter Felder können wir die Validierung und Konvertierung von Daten in pydantic an unsere spezifischen Anforderungen anpassen. Dies ermöglicht es uns, flexiblere und genauere Datenmodelle zu erstellen, die unseren Anwendungsfällen entsprechen.
-In der Praxis können benutzerdefinierte Felder in pydantic verwendet werden, um spezielle Validierungen oder Kon
+In der Praxis können benutzerdefinierte Felder in pydantic verwendet werden, um spezielle Validierungen oder Konvertierungen vorzunehmen, die über die Standardfunktionen hinausgehen.
 
 ## Eigene Validatoren
 
@@ -64,17 +64,64 @@ class User(BaseModel):
     @validator('username')
     def validate_username(cls, value):
         if not value.isalnum():
-            raise ValueError('username must only contain letters, numbers, and underscores')
+            raise ValueError('username must only contain letters and numbers')
         return value
 
 try:
-    user = User(username='alice_123')
+    user = User(username='alice123')
     print(user)
 except ValidationError as e:
     print(e)
 ```
 
-In diesem Beispiel definieren wir die Klasse `User` mit einem Feld `username`, das nur Buchstaben, Zahlen und Unterstriche enthalten darf. Wir erstellen ein benutzerdefiniertes Validierungsmethode `validate_username`, das die Überprüfung durchführt und eine `ValueError` auslöst, wenn das Feld nicht den Anforderungen entspricht.
+In diesem Beispiel definieren wir die Klasse `User` mit einem Feld `username`, das nur Buchstaben und Zahlen enthalten darf. Wir erstellen ein benutzerdefiniertes Validierungsmethode `validate_username`, das die Überprüfung durchführt und eine `ValueError` auslöst, wenn das Feld nicht den Anforderungen entspricht.
 
 Wir verwenden das benutzerdefinierte Validierungsmethode `validate_username` mit dem Dekorator `@validator`, um das Feld `username` zu validieren. Wenn wir versuchen, ein `User`-Objekt mit einem ungültigen Benutzernamen zu erstellen, wird eine `ValidationError` ausgelöst.
 
+### Aufgabe: Implementierung eines eigenen Validators
+
+Erstelle ein Pydantic-Modell `Artikel` mit folgenden Anforderungen:
+
+1. Das Modell soll folgende Felder haben:
+    - `name`: Ein String-Feld für den Namen des Artikels
+    - `artikelnummer`: Ein String-Feld für die Artikelnummer
+    - `preis`: Ein Float-Feld für den Preis des Artikels
+    - `kategorie`: Ein String-Feld für die Kategorie des Artikels
+
+2. Implementiere einen eigenen Validator für das Feld `artikelnummer` mit folgenden Regeln:
+    - Die Artikelnummer muss genau 8 Zeichen lang sein
+    - Die ersten zwei Zeichen müssen Buchstaben sein (Großbuchstaben)
+    - Die letzten 6 Zeichen müssen Zahlen sein
+    - Beispiel für eine gültige Artikelnummer: "AB123456"
+
+3. Implementiere einen weiteren Validator für das Feld `kategorie`, der sicherstellt, dass nur bestimmte Kategorien erlaubt sind. Die erlaubten Kategorien sind:
+    - "Elektronik"
+    - "Kleidung"
+    - "Lebensmittel"
+    - "Haushalt"
+
+4. Teste dein Modell mit verschiedenen Eingaben, sowohl mit gültigen als auch mit ungültigen Daten.
+
+Hier ist ein Grundgerüst für dein Modell:
+
+```python
+from pydantic import BaseModel, validator
+
+class Artikel(BaseModel):
+    name: str
+    artikelnummer: str
+    preis: float
+    kategorie: str
+
+    @validator('artikelnummer')
+    def validate_artikelnummer(cls, v):
+        # Implementiere hier die Validierung für die Artikelnummer
+        pass
+
+    @validator('kategorie')
+    def validate_kategorie(cls, v):
+        # Implementiere hier die Validierung für die Kategorie
+        pass
+
+# Teste dein Modell hier
+```

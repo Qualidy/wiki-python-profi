@@ -1,6 +1,6 @@
 # Dekoratoren in Python
 
-Mithilfe von Dekoratoren können wir Funktionen oder Klassen flexibel zu erweitern, ohne deren ursprünglichen Code zu verändern. Sie erlauben es uns, zusätzliche Funktionalitäten hinzuzufügen, was besonders hilfreich ist, um den Quellcode sauberer und modularer zu gestalten.
+Mithilfe von Dekoratoren können wir Funktionen oder Klassen flexibel erweitern, ohne deren ursprünglichen Code zu verändern. Sie erlauben es uns, zusätzliche Funktionalitäten hinzuzufügen, was besonders hilfreich ist, um den Quellcode sauberer und modularer zu gestalten.
 
 #### Grundlagen der Dekoratoren
 

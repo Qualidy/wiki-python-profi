@@ -1,3 +1,5 @@
+# OOP & Design Patterns / Strukturierte Projekte
+
 ### Einführung in OOP & Design Patterns / Strukturierte Projekte
 
 In diesem Kapitel werden wir die Grundlagen der OOP in Python sowie fortgeschrittene Konzepte wie Design Patterns durch praktische Beispiele aus der Data Science Welt erarbeiten. Ein besonderer Fokus liegt dabei auf der Strukturierung von Data Science Projekten – von der Datenverarbeitung über die Modellierung bis hin zur Ausgabe der Ergebnisse.

@@ -95,3 +95,13 @@ if __name__ == '__main__':
 
 In diesem Beispiel wird eine Dash-Anwendung erstellt, die ein Diagramm, ein Dropdown-Menü und einen Schieberegler enthält. Das Diagramm zeigt zwei Balkendiagramme für die Städte Berlin und München.
 
+### Aufgabe:
+
+Erstelle eine Dash-Anwendung für einen Discounter, die folgende Elemente enthält:
+
+1. Eine Überschrift (H1) mit dem Namen des Discounters.
+2. Ein Dropdown-Menü zur Auswahl verschiedener Produktkategorien (z.B. Obst, Gemüse, Milchprodukte).
+3. Ein Balkendiagramm, das die Verkaufszahlen für die Top 5 Produkte der ausgewählten Kategorie anzeigt.
+4. Einen Schieberegler, mit dem der Benutzer einen Preisbereich auswählen kann.
+
+Verwende dazu die passenden Komponenten aus `dash.html` und `dash.dcc`.

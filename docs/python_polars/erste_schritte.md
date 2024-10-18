@@ -153,6 +153,24 @@ print(joined)
 !!! note
     Spätestens beim Joinen weiterer Tabellen wird Pandas langsam aber sicher zu einem Bottleneck bei der Analyse der Daten.
 
+### Aufgaben
+
+1. **Daten einlesen und filtern:**
+   Lade die Datei "food_nutrient.csv" aus dem [FoodData Central Datensatz](https://fdc.nal.usda.gov/download-datasets.html) herunter. Verwende die Lazy API von Polars, um die Datei einzulesen. Filtere dann alle Einträge, bei denen der Nährwert (amount) größer als 10 ist.
+
+2. **Spalten auswählen und umbenennen:**
+   Wähle aus dem DataFrame die Spalten 'fdc_id', 'nutrient_id' und 'amount' aus. Gib der Spalte 'amount' den Alias 'nutrient_amount'.
+
+3. **Gruppierung und Aggregation:**
+   Gruppiere die Daten nach 'nutrient_id' und berechne den Durchschnittswert und den Maximalwert für 'amount' pro Nährstoff.
+
+4. **Daten zusammenführen:**
+   Lade zusätzlich die Datei "nutrient.csv" herunter. Führe einen Join zwischen dem 'food_nutrient' DataFrame und dem 'nutrient' DataFrame durch, um den Namen des Nährstoffs (name) zu den Nährwertdaten hinzuzufügen.
+
+5. **Analyse:**
+   Finde die Top 10 Lebensmittel (fdc_id) mit dem höchsten Gehalt an Vitamin C (verwende die entsprechende nutrient_id für Vitamin C).
+
+Versuche, diese Aufgaben mit den in diesem Dokument vorgestellten Polars-Funktionen zu lösen. Die Aufgaben basieren auf realen Daten und geben einen Einblick in typische Datenverarbeitungsaufgaben im Bereich der Ernährungswissenschaften. Viel Erfolg!
 
 
 

@@ -2,7 +2,7 @@
 
 Pydantic bietet die Möglichkeit, Python-Dataclasses um Validierungslogik und zusätzliche Features zu erweitern. Normalerweise sind **Dataclasses** einfache Container für Daten, die keine eingebaute Validierung oder Konvertierung bieten. Pydantic-Dataclasses hingegen fügen diesen Funktionen eine starke Datenvalidierung hinzu, ähnlich wie bei einem `BaseModel`.
 
-Wir können die Dataclas von Pydantic als wie eine Erweiterung der built-in Dataclass in Python sehen.
+Wir können die Dataclass von Pydantic als wie eine Erweiterung der built-in Dataclass in Python sehen.
 
 #### Beispiel: Pydantic-Dataclass
 
